@@ -1,5 +1,9 @@
 <div class="auth-screen wrapper">
+    
     <div class="auth-form">
+        <div class="alert alert-success" ng-show="successMessage">
+            {{successMessage}}
+        </div>
        <div>
             <h1>Log In</h1>
        </div>
@@ -24,10 +28,6 @@
 
         <div>
             <a href="/register">Don't have an account? Register here!</a>    
-        </div>
-        
-        <div class="alert alert-success" ng-show="successMessage">
-            {{successMessage}}
         </div>
         
         <div class="alert alert-danger" role="alert" ng-show="errorMessage">

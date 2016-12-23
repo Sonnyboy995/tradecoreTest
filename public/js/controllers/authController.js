@@ -6,8 +6,10 @@
     
     app.controller("AuthController", ["$scope", "$location","auth", "localStorageProvider", "md5", function($scope, $location, auth, localStorageProvider, md5) {
         
+        var queryString = $location.search();
+        
         $scope.errorMessage = null;
-        $scope.successMessage = null;
+        $scope.successMessage = queryString.register ? "You are registered successfully. You can sign in." : null;
         
         // COLLECT REGISTRATION INFORMATIONS
         $scope.registrationInfo = {
@@ -47,7 +49,7 @@
                  } else {
                      $scope.errorMessage = null;
                      $scope.successMessage = "You are registered successfuly!";
-                     $location.path("/login");
+                     $location.path("/login").search("register", "true");
                  }
              });                  
         };
