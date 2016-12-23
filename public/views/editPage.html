@@ -1,6 +1,6 @@
 <div class="wrapper">
    <header class="cf">
-        <h3 ng-show="!userIsAdmin">Hello {{user.firstName}}</h3>
+        <h3 ng-show="!userIsAdmin">Hello {{user.data.firstName}}</h3>
         <a href="/admin"><h3 ng-show="userIsAdmin">Admin Page</h3></a>
         <nav>
             <ul>
@@ -36,7 +36,7 @@
 
                <div>
                    <label for="password">Password:</label>
-                   <input type="password" required name="password" id="password" class="form-control" placeholder="Type your password" ng-model-options="{updateOn: 'submit'}">
+                   <input type="password" name="password" id="password" class="form-control" placeholder="Type your password" ng-model-options="{updateOn: 'submit'}">
                </div>
                
                <button id="adminBtn" ng-show="userIsAdmin" ng-click="changeUserPremission(user)" type="button" class="btn btn-info">Set user as {{ user.data.admin ? "regular user" : "administrator"}}</button>

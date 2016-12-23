@@ -4,7 +4,7 @@
     
     var app = angular.module("tradeCoreApp");
     
-    app.factory("resolveRoutes", function(auth, $routeParams, $q, $location, middlewareStatus) {
+    app.factory("resolveRoutes", function(auth, $routeParams, $q, $location) {
         
         function secureUserPage(id) {
             var loggedInUser = auth.user();   

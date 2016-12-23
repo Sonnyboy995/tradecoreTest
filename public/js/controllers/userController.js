@@ -4,7 +4,7 @@
     
     var app = angular.module("tradeCoreApp");
     
-    app.controller("UserController", ["$scope", "$location", "$routeParams","localStorageProvider", "User", "auth", "userRepo", function($scope, $location, $routeParams,localStorageProvider, User, auth, userRepo) {
+    app.controller("UserController", ["$scope", "$location", "$routeParams","localStorageProvider", "User", "auth", "userRepo", "md5", function($scope, $location, $routeParams,localStorageProvider, User, auth, userRepo, md5) {
         
         $scope.logOut = function() {
             auth.logOut();            
@@ -45,7 +45,13 @@
             $location.path("/user/" + id);
         }  
         
-        $scope.edit = function(user) {            
+        $scope.edit = function(user) {
+            var newPassword = $("#password").val();
+            
+            if (newPassword) {
+                user.data.password = md5.createHash(newPassword);
+            }
+            
             userRepo.update(user);
             
             $location.path("/user/" + $scope.user.id);
@@ -53,10 +59,10 @@
         }
         
         $scope.changeUserPremission = function(user) {
-            if ($scope.userIsAdmin) {
-                user.admin = !user.admin;
+            if ($scope.currentUser.isAdmin()) {                
+                user.data.admin = !user.data.admin;
             } else {
-                return false;
+                return false; 
             }
         }
     }]);

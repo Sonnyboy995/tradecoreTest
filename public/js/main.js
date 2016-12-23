@@ -41,10 +41,10 @@
             this.$get = function(userRepo) {
                 
                 var admin = {
-                        firstName: "Aleksandar",
-                        lastName: "Karic",
-                        email: "a_karic@outlook.com",
-                        password: "1234",
+                        firstName: "Tradecore",
+                        lastName: "Tradecore",
+                        email: "trade@tradecore.com",
+                        password: "tradecore",
                         admin: true
                     }
                 
@@ -60,7 +60,7 @@
     }]);    
     
     
-    app.run(function($rootScope, $location, middlewareStatus, auth, resolveRoutes) {
+    app.run(function($rootScope, $location, auth, resolveRoutes) {
         $rootScope.$on("$routeChangeStart", function(event, next, current) {            
             var originalPath = next.$$route.originalPath;
             

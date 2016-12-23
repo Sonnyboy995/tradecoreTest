@@ -36,7 +36,7 @@
             db.insertUser(data);
         }
         
-        function update(data) {
+        function update(data) {            
             db.updateUserInfo(data.data);
         }
         

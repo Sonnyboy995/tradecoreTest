@@ -89,7 +89,7 @@
         }
         
         function updateUserInfo(user) {
-//            console.log(user);
+
             user.lastUpdate = $filter('date')(new Date(),'yyyy-MM-dd');
             for (var i = 0; i < users.length; i++) {
                 if (users[i].id == user.id) {
