@@ -1,0 +1,33 @@
+<div class="wrapper">
+   <header class="cf">
+        <h3 ng-show="!userIsAdmin">Hello {{user.data.firstName}}</h3>
+        <a href="/admin"><h3 ng-show="userIsAdmin">Admin Page</h3></a>    
+        <nav>
+            <ul>
+                <li class="active" ng-click="redirectToProfile()">{{link1}}</li>                                
+                <li ng-click="redirectToEditPage()">{{link2}}</li>
+            </ul>
+        </nav>
+
+        <button class="btn btn-success" ng-click="logOut()">Log Out</button>
+    </header>
+    
+
+    <main class="user-profile">
+        <div class="user-info">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>User Info</h3>
+                </div>
+                <div class="panel-body">
+                    <p>First name: {{user.data.firstName}}</p>
+                    <p>Last name: {{user.data.lastName}}</p>
+                    <p>Email: {{user.data.email}}</p>
+                    <p>Registration date: {{user.data.registrationDate}}</p>
+                    <p>Last update: {{user.data.lastUpdate}}</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+

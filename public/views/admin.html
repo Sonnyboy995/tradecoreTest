@@ -1,0 +1,38 @@
+<div class="wrapper">
+    <aside>
+        <div class="admin-navigation">
+            <ul class="nav nav-pills nav-stacked">
+              <li role="presentation" class="active">Users List</li>
+              <li role="presentation" ng-click="logOut()">Log Out</li>
+            </ul>
+        </div>
+	</aside>
+	
+	<main class="admin-panel">
+	    <h1>Users list</h1>
+	    	    
+	    <input class="form-control" id="search" type="search" placeholder="Search User" ng-model="searchUser">
+	    
+	    
+	    <table class="table table-hover">
+	        <thead>
+	            <tr>
+	                <th>First Name:</th>
+	                <th>Last Name:</th>
+	                <th>Email:</th>
+	                <th>Registration Date:</th>
+	                <th>Last Update:</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr ng-repeat="user in allUsers | filter: searchUser" ng-click="showProfile(user.id)" title="Show profile">
+	                <td>{{user.firstName}}</td>
+	                <td>{{user.lastName}}</td>
+	                <td>{{user.email}}</td>
+	                <td>{{user.registrationDate}}</td>
+	                <td>{{user.lastUpdate}}</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	</main>
+</div>

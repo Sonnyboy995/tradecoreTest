@@ -1,0 +1,37 @@
+<div class="auth-screen wrapper">
+    <div class="auth-form">
+       <div>
+            <h1>Log In</h1>
+       </div>
+
+       <div>
+            <form class="form-group" ng-submit="login(loginInfo)">
+               <div>
+                   <label for="email">Email:</label>
+                   <input type="email" required name="email" id="email" class="form-control" placeholder="e.g. example@email.com" ng-model="loginInfo.email">
+               </div>
+
+               <div>
+                   <label for="password">Password:</label>
+                   <input type="password" required name="password" id="password" class="form-control" placeholder="Type your password" ng-model="loginInfo.password">
+               </div>
+               
+               <div>
+                   <input type="submit" class="form-control btn btn-success" value="Log In">
+               </div>
+            </form>
+        </div>
+
+        <div>
+            <a href="/register">Don't have an account? Register here!</a>    
+        </div>
+        
+        <div class="alert alert-success" ng-show="successMessage">
+            {{successMessage}}
+        </div>
+        
+        <div class="alert alert-danger" role="alert" ng-show="errorMessage">
+          <p class="alert-link">{{errorMessage}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,197 @@
+h1 {
+    font-size: 44px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #e3e3e3;
+}
+
+label {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+input[type="submit"] {
+    width: 100px;
+}
+
+input[type="search"] {
+    width: 300px;
+    margin: 20px 0px;
+}
+
+td {
+    cursor: pointer;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    color: #e3e3e3;
+}
+
+
+header {
+    width: 100%;
+    padding: 0px 10px 10px 40px;
+    background-color: #5D4157;
+}
+
+header h3 {
+    float: left;
+    
+}
+
+header a {
+    text-decoration: none;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+header a:hover {
+    
+    color: #A8CABA;
+}
+
+header nav {    
+    float: left;
+    margin: 20px 20px 10px 30px;
+}
+
+header nav ul li {
+    width: 100px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    margin-right: 25px;
+    font-size: 15px;    
+    padding: 3px 7px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    border: 2px solid #A8CABA;
+    border-radius: 2px;
+}
+
+header nav ul li:hover, .admin-navigation ul li:hover, .active {
+    background-color: #A8CABA;
+    color: #5D4157;
+}
+
+header button {
+    float: right;
+    margin-top: 18px;
+    margin-right: 40px;
+}
+
+main.user-profile {
+/*    background-color: #A8CABA;*/
+    color: #5D4157;
+/*    height: 90vh;*/
+}
+
+.admin-navigation {
+	width: 300px;
+	float: left;
+	height: 100vh;
+	background-color: #5D4157;
+}
+
+.admin-navigation ul li {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 0;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.admin-panel {
+    height: 100vh;
+    overflow-y: scroll;
+    color: #5D4157;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.user-info {
+    width: 50%;
+    margin: 80px auto;
+    font-size: 22px;
+}
+
+#adminBtn {
+    margin-bottom: 20px;
+}
+
+.auth-screen {
+    background: -webkit-linear-gradient(left, #5D4157, #A8CABA);
+    background: -moz-linear-gradient(left, #5D4157, #A8CABA);
+    background: -o-linear-gradient(left, #5D4157, #A8CABA); 
+    background-color: #5D4157;
+    color: #e3e3e3;
+    overflow-y: auto;
+}
+
+.auth-form {
+    width: 400px;
+    margin: 30px auto;
+}
+
+.auth-form h1 {
+    text-align: left;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.auth-form input {
+    margin-bottom: 15px;
+}
+
+.auth-form a {
+    text-decoration: none;
+    font-size: 18px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.auth-form a:hover {
+    color: #A8CABA;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
