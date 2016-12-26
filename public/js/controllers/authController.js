@@ -11,7 +11,7 @@
         $scope.errorMessage = null;
         $scope.successMessage = queryString.register ? "You are registered successfully. You can sign in." : null;
         
-        // COLLECT REGISTRATION INFORMATIONS
+        /* Collect user registration info */
         $scope.registrationInfo = {
             firstName: "",
             lastName: "",
@@ -19,13 +19,17 @@
             password: ""
         };
         
-        // COLLECT LOGIN INFORMATIONS
+        /* Collect user login info */
         $scope.loginInfo = {
             email: "",
             password: ""
         };
         
-        
+        /**
+        * Takes informations that user typed in login form and process them
+        *
+        * @param {object} formData - values form login form
+        */
         $scope.login = function(formData) {
             auth.authenticateUser(formData, function(errMsg, user) {                
                 if (errMsg) {
@@ -41,7 +45,11 @@
             });
         }
         
-        
+        /**
+        * Takes informations that user typed in registration form and process them
+        *
+        * @param {object} registrationInfo - values from registration form
+        */
         $scope.signUp = function(registrationInfo) {             
              auth.register(registrationInfo, function(err) {
                  if (err) {

@@ -1,10 +1,10 @@
-(function(){
+(function() {
     
     "use strict";
     
     var app = angular.module("tradeCoreApp", ["ngRoute", "ngMd5"]);
     
-    app.config(["$routeProvider", "$provide","$locationProvider", function($routeProvider, $provide,$locationProvider, userRepo) {
+    app.config(["$routeProvider", "$provide", "$locationProvider", function($routeProvider, $provide,$locationProvider, userRepo) {
         
         $routeProvider
             .when("/login", {
@@ -61,40 +61,40 @@
     
     
     app.run(function($rootScope, $location, auth, resolveRoutes) {
-        $rootScope.$on("$routeChangeStart", function(event, next, current) {            
-            var originalPath = next.$$route.originalPath;
+        $rootScope.$on("$routeChangeStart", function(event, next, current) {  
             
-            switch (originalPath) {
-                case "/login":
-                    var result = resolveRoutes.loginRedirect();
-                    if (!result.allowed) {                    
-                        $location.path(result.path);
-                    }
-                    break;
-                case "/user/:id":
-                    var result = resolveRoutes.secureUserPage(next.params.id);
-                    if (!result.allowed) {                    
-                        $location.path(result.path);
-                    }
-                    break;
-                case "/user/:id/edit":                    
-                    var result = resolveRoutes.secureUserPage(next.params.id);
-                    
-                    if (!result.allowed) {                    
-                        $location.path(result.path);
-                    }
-                    break;
-                case "/admin":
-                    var result = resolveRoutes.secureAdminPage();
-                    if (!result.allowed) {                    
-                        $location.path(result.path);
-                    }
-                    break;
+            if (next.$$route) {
+                var originalPath = next.$$route.originalPath;
+            
+                switch (originalPath) {
+                    case "/login":
+                        var result = resolveRoutes.loginRedirect();
+                        if (!result.allowed) {                    
+                            $location.path(result.path);
+                        }
+                        break;
+                    case "/user/:id":
+                        var result = resolveRoutes.secureUserPage(next.params.id);
+                        if (!result.allowed) {                    
+                            $location.path(result.path);
+                        }
+                        break;
+                    case "/user/:id/edit":                    
+                        var result = resolveRoutes.secureUserPage(next.params.id);
+
+                        if (!result.allowed) {                    
+                            $location.path(result.path);
+                        }
+                        break;
+                    case "/admin":
+                        var result = resolveRoutes.secureAdminPage();
+                        if (!result.allowed) {                    
+                            $location.path(result.path);
+                        }
+                        break;
+                }
             }
+        
         });
     });
-    
-    
-//}]);
-
 }());
